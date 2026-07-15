@@ -13,6 +13,13 @@ npm run dev
 
 トークンは `src/tokens/` にあり、フレームワーク非依存です。
 
+## Deploy (GitHub Pages)
+
+`master` への push で GitHub Actions がビルドし、`gh-pages` ブランチへデプロイします。
+
+リポジトリの Settings → Pages で Source を **Deploy from a branch**、Branch を **gh-pages / (root)** に設定してください。
+
+公開 URL: https://genbuhase.github.io/Colors/
 ## Tokens
 
 | Family | Name | Use |
