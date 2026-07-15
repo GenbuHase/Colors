@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import { useClipboard } from "../composables/useClipboard.ts";
-import { roleRows, roleValue } from "../lib/palette.ts";
-
-const { copy } = useClipboard();
-</script>
-
 <template>
   <div class="role-table-wrap">
     <table class="role-table">
@@ -16,10 +9,12 @@ const { copy } = useClipboard();
           <th>Dark</th>
         </tr>
       </thead>
+
       <tbody>
         <tr v-for="[token, use, key] in roleRows" :key="token">
           <td><code>{{ token }}</code></td>
           <td>{{ use }}</td>
+
           <td>
             <button
               type="button"
@@ -31,6 +26,7 @@ const { copy } = useClipboard();
               <span>{{ roleValue("light", key) }}</span>
             </button>
           </td>
+
           <td>
             <button
               type="button"
@@ -47,3 +43,10 @@ const { copy } = useClipboard();
     </table>
   </div>
 </template>
+
+<script setup lang="ts">
+  import { useClipboard } from "../composables/useClipboard.ts";
+  import { roleRows, roleValue } from "../lib/palette.ts";
+
+  const { copy } = useClipboard();
+</script>

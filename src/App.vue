@@ -183,6 +183,7 @@
   import { colors, printSet } from "./tokens/colors.ts";
 
   useTheme();
+
   const heroVisible = ref(false);
 
   onMounted(() => {
@@ -196,6 +197,7 @@
       targets.forEach((el) => el.classList.add("is-visible"));
       return;
     }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -207,6 +209,7 @@
       },
       { threshold: 0.12 },
     );
+
     targets.forEach((el) => observer.observe(el));
   });
 </script>

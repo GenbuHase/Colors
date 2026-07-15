@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { useClipboard } from "../composables/useClipboard.ts";
-
-const { message, visible } = useClipboard();
-</script>
-
 <template>
   <div
     class="toast"
@@ -15,3 +9,9 @@ const { message, visible } = useClipboard();
     {{ message }}
   </div>
 </template>
+
+<script setup lang="ts">
+  import { useClipboard } from "../composables/useClipboard.ts";
+
+  const { message, visible } = useClipboard();
+</script>
