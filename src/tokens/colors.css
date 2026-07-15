@@ -1,0 +1,55 @@
+/**
+ * Genbu Hase — personal palette primitives (theme-independent)
+ * Anchor: birth color 鴇色 #f4b3c2 → primary-300
+ */
+
+:root {
+  /* Primary — Toki（鴇） */
+  --color-primary-50: #fff7f9;
+  --color-primary-100: #ffebf0;
+  --color-primary-200: #ffd6e0;
+  --color-primary-300: #f4b3c2;
+  --color-primary-400: #e891a8;
+  --color-primary-500: #d66b8a;
+  --color-primary-600: #c04a6e;
+  --color-primary-700: #a13858;
+  --color-primary-800: #85304a;
+  --color-primary-900: #6f2b41;
+  --color-primary-950: #3d1522;
+
+  /* Accent — Celadon（青磁） */
+  --color-accent-50: #f0f7f6;
+  --color-accent-100: #d9edeb;
+  --color-accent-200: #b5dbd6;
+  --color-accent-300: #86c2bb;
+  --color-accent-400: #5aa39b;
+  --color-accent-500: #3f877f;
+  --color-accent-600: #316c66;
+  --color-accent-700: #2a5752;
+  --color-accent-800: #254643;
+  --color-accent-900: #213b39;
+  --color-accent-950: #0f2120;
+
+  /* Neutral — Ink（インク） */
+  --color-neutral-50: #faf8f8;
+  --color-neutral-100: #f3eeee;
+  --color-neutral-200: #e8e1e2;
+  --color-neutral-300: #d4cacd;
+  --color-neutral-400: #b5a8ac;
+  --color-neutral-500: #96888d;
+  --color-neutral-600: #766a6e;
+  --color-neutral-700: #5c5256;
+  --color-neutral-800: #3f393c;
+  --color-neutral-900: #2a2628;
+  --color-neutral-950: #181516;
+
+  /* Semantic primitives */
+  --color-success-50: #eef6f1;
+  --color-success-500: #3d7a5a;
+  --color-warning-50: #fbf4ea;
+  --color-warning-500: #c4893a;
+  --color-danger-50: #f9eeee;
+  --color-danger-500: #c45c5c;
+  --color-info-50: #eef2f8;
+  --color-info-500: #4a6fa5;
+}

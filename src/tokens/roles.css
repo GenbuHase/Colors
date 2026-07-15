@@ -1,0 +1,72 @@
+/**
+ * Personal role aliases (light / dark). Prefer these over raw HEX in your own UI.
+ */
+
+:root,
+[data-theme="light"] {
+  --surface-page: #fffafb;
+  --surface-raised: #ffffff;
+  --surface-subtle: var(--color-primary-50);
+
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-inverse: #ffffff;
+
+  --border-default: var(--color-neutral-200);
+  --focus-ring: var(--color-accent-500);
+
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-accent: var(--color-accent-600);
+  --link: var(--color-accent-600);
+
+  --color-success-bg: var(--color-success-50);
+  --color-warning-bg: var(--color-warning-50);
+  --color-danger-bg: var(--color-danger-50);
+  --color-info-bg: var(--color-info-50);
+}
+
+[data-theme="dark"] {
+  --surface-page: #1a1416;
+  --surface-raised: #241c1f;
+  --surface-subtle: var(--color-primary-950);
+
+  --text-primary: var(--color-neutral-50);
+  --text-secondary: var(--color-neutral-400);
+  --text-inverse: var(--color-neutral-950);
+
+  --border-default: var(--color-neutral-800);
+  --focus-ring: var(--color-accent-300);
+
+  --action-primary: var(--color-primary-400);
+  --action-primary-hover: var(--color-primary-300);
+  --action-accent: var(--color-accent-400);
+  --link: var(--color-accent-300);
+
+  --color-success-bg: #1a2a22;
+  --color-warning-bg: #2a2218;
+  --color-danger-bg: #2a1a1a;
+  --color-info-bg: #1a2030;
+}
+
+@media print {
+  :root,
+  html {
+    --surface-page: #fffafb;
+    --surface-raised: #ffffff;
+    --surface-subtle: var(--color-primary-50);
+    --text-primary: var(--color-neutral-900);
+    --text-secondary: var(--color-neutral-600);
+    --text-inverse: #ffffff;
+    --border-default: var(--color-neutral-200);
+    --focus-ring: var(--color-accent-500);
+    --action-primary: var(--color-primary-600);
+    --action-primary-hover: var(--color-primary-700);
+    --action-accent: var(--color-accent-600);
+    --link: var(--color-accent-600);
+    --color-success-bg: var(--color-success-50);
+    --color-warning-bg: var(--color-warning-50);
+    --color-danger-bg: var(--color-danger-50);
+    --color-info-bg: var(--color-info-50);
+  }
+}

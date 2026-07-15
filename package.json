@@ -1,0 +1,36 @@
+{
+  "name": "@genbuhase/own-colors",
+  "version": "alpha-0.1.0",
+  "description": "Genbu Hase's Personal Colors",
+  "type": "module",
+  "files": [
+    "src/tokens"
+  ],
+  "exports": {
+    "./tokens.css": "./src/tokens/tokens.css",
+    "./colors.css": "./src/tokens/colors.css",
+    "./roles.css": "./src/tokens/roles.css",
+    "./tokens": "./src/tokens/colors.ts"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GenbuHase/Colors.git"
+  },
+  "license": "MIT",
+  "author": "Genbu Hase",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~5.9.3",
+    "vite": "^6.3.5",
+    "vue-tsc": "^3.3.7"
+  },
+  "dependencies": {
+    "vue": "^3.5.39"
+  }
+}
