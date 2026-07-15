@@ -1,0 +1,107 @@
+@use "variables" as *;
+
+.code-block {
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-default);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background: var(--surface-raised);
+
+  &__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid var(--border-default);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    background: color-mix(in srgb, var(--surface-subtle) 65%, var(--surface-raised));
+  }
+
+  code {
+    padding: 0;
+    background: transparent;
+    font-family: $mono;
+    color: var(--text-primary);
+  }
+
+  .hljs {
+    color: var(--text-primary);
+    background: transparent;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-built_in,
+  .hljs-name {
+    color: var(--color-accent-600);
+
+    [data-theme="dark"] & {
+      color: var(--color-accent-300);
+    }
+  }
+
+  .hljs-string,
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-template-variable {
+    color: var(--color-primary-700);
+
+    [data-theme="dark"] & {
+      color: var(--color-primary-300);
+    }
+  }
+
+  .hljs-number,
+  .hljs-literal,
+  .hljs-symbol {
+    color: var(--color-primary-500);
+  }
+
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-variable,
+  .hljs-template-tag {
+    color: var(--color-accent-700);
+
+    [data-theme="dark"] & {
+      color: var(--color-accent-200);
+    }
+  }
+
+  .hljs-meta,
+  .hljs-meta .hljs-keyword,
+  .hljs-doctag {
+    color: var(--color-primary-600);
+
+    [data-theme="dark"] & {
+      color: var(--color-primary-400);
+    }
+  }
+
+  .hljs-punctuation,
+  .hljs-operator {
+    color: var(--text-secondary);
+  }
+
+  .hljs-property,
+  .hljs-params {
+    color: var(--text-primary);
+  }
+}

@@ -1,0 +1,126 @@
+@use "variables" as *;
+
+.footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-default);
+  background: var(--surface-page);
+
+  &__inner {
+    max-width: $content-max;
+    margin: 0 auto;
+    padding: 0 $content-pad-x;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  &__link {
+    color: var(--link);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.35rem;
+      color: var(--text-secondary);
+      transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
+
+      &:hover {
+        color: var(--text-primary);
+        background: var(--surface-subtle);
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: currentColor;
+    mask: no-repeat center / contain;
+    -webkit-mask: no-repeat center / contain;
+
+    &--github {
+      mask-image: url("/icons/github.svg");
+      -webkit-mask-image: url("/icons/github.svg");
+    }
+
+    &--twitter {
+      mask-image: url("/icons/twitter.svg");
+      -webkit-mask-image: url("/icons/twitter.svg");
+    }
+
+    &--instagram {
+      mask-image: url("/icons/instagram.svg");
+      -webkit-mask-image: url("/icons/instagram.svg");
+    }
+  }
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%) translateY(0.5rem);
+  padding: 0.65rem 1rem;
+  border-radius: 0.35rem;
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  z-index: 50;
+
+  &--show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media print {
+  .topbar,
+  .theme-switch,
+  .toast,
+  .hero__actions,
+  .code-block__bar button,
+  .footer__nav {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  body {
+    background: #fffafb;
+    color: #2a2628;
+  }
+}

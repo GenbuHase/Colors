@@ -76,4 +76,5 @@ body {
 export const tsSnippet = `import { colors, printSet } from "@genbuhase/my-colors/tokens";
 
 colors.primary[300]; // 鴇色 (toki)
-printSet;            // print triad`;
+printSet;            // print set (business card / print)
+`;

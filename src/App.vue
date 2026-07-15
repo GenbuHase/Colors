@@ -65,14 +65,15 @@
       </div>
     </section>
 
-    <section class="section" id="themes">
+    <section class="section section--subtle" id="themes">
       <div class="section__inner">
         <h2>Theme</h2>
-        <p class="section__lead">
-          Primitives stay fixed. Only roles switch with
-          <code>data-theme="light|dark"</code>.
-        </p>
+        <div class="theme-lead">
+          <ThemeSwitch />
+        </div>
+
         <RoleTable />
+
         <div class="contrast-grid">
           <div
             v-for="theme in (['light', 'dark'] as const)"
@@ -81,6 +82,7 @@
             :data-theme="theme"
           >
             <h3>{{ theme === "light" ? "Light" : "Dark" }} · contrast</h3>
+
             <ul>
               <li v-for="pair in contrastPairs[theme]" :key="pair.label">
                 <span>{{ pair.label }}</span>
@@ -89,72 +91,86 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="preview">
+      <div class="section__inner">
+        <h2>Preview</h2>
+
         <div class="applied">
-          <div class="applied__row">
-            <button type="button" class="btn btn--primary">action-primary</button>
-            <button type="button" class="btn btn--accent">action-accent</button>
-            <a class="applied__link" href="#use">link</a>
-          </div>
-          <p class="applied__body">text-primary — 長谷 玄武</p>
-          <p class="applied__caption">text-secondary</p>
-          <div class="applied__toki-banner"><span>primary-300</span></div>
-          <div class="print-set">
-            <h3>Print triad (light only)</h3>
-            <div class="print-set__chips">
-              <ColorSwatch token="primary-300" :hex="printSet.toki" note="鴇色" />
-              <ColorSwatch token="neutral-900" :hex="printSet.ink" note="ink" />
-              <ColorSwatch token="accent-600" :hex="printSet.celadon" note="celadon" />
+          <div class="applied__sample">
+            <p class="applied__label">
+              <code>--action-primary</code> / <code>--action-accent</code> / <code>--link</code>
+            </p>
+            <div class="applied__row">
+              <button type="button" class="btn btn--primary">Primary button</button>
+              <button type="button" class="btn btn--accent">Accent button</button>
+              <a class="applied__link" href="#usage">Inline link</a>
             </div>
+          </div>
+
+          <div class="applied__sample">
+            <p class="applied__label"><code>--text-primary</code></p>
+            <p class="applied__body">長谷 玄武</p>
+          </div>
+
+          <div class="applied__sample">
+            <p class="applied__label"><code>--text-secondary</code></p>
+            <p class="applied__caption">Secondary text / caption</p>
+          </div>
+
+          <div class="applied__sample">
+            <p class="applied__label">
+              <code>primary-300</code> + <code>--text-inverse</code>（light では ink）
+            </p>
+            <div class="applied__toki-banner"><span>鴇色面のテキスト</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="use">
+    <section class="section section--subtle" id="print-set">
+      <div class="section__inner">
+        <h2>Print Set</h2>
+        <p class="section__lead">
+          名刺・印刷向けの3色です。常にLight-Themeの鴇色 / 墨色 / 青磁色となります。
+        </p>
+
+        <div class="print-set">
+          <div class="print-set__chips">
+            <ColorSwatch token="primary-300" :hex="printSet.toki" note="鴇色 · Primary" />
+            <ColorSwatch token="neutral-900" :hex="printSet.ink" note="墨 · Text" />
+            <ColorSwatch token="accent-600" :hex="printSet.celadon" note="青磁 · Accent" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="usage">
       <div class="section__inner">
         <h2>Usage</h2>
-        <div class="code-block">
-          <div class="code-block__bar">
-            <span>CSS</span>
-            <button type="button" class="btn btn--small" @click="copy(cssSnippet)">
-              Copy
-            </button>
-          </div>
-          <pre><code>{{ cssSnippet }}</code></pre>
-        </div>
-        <div class="code-block">
-          <div class="code-block__bar">
-            <span>TypeScript</span>
-            <button type="button" class="btn btn--small" @click="copy(tsSnippet)">
-              Copy
-            </button>
-          </div>
-          <pre><code>{{ tsSnippet }}</code></pre>
-        </div>
+
+        <CodeBlock label="CSS" lang="css" :code="cssSnippet" />
+        <CodeBlock label="TypeScript" lang="typescript" :code="tsSnippet" />
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <p>
-        <strong>MyColors</strong> — 長谷 玄武 ·
-        <a href="https://github.com/GenbuHase/Colors" rel="noopener noreferrer">Colors</a>
-      </p>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <AppToast />
 </template>
 
 <script setup lang="ts">
   import { onMounted, ref } from "vue";
+  import CodeBlock from "./components/CodeBlock.vue";
   import ColorScale from "./components/ColorScale.vue";
   import ColorSwatch from "./components/ColorSwatch.vue";
   import RoleTable from "./components/RoleTable.vue";
   import ThemeSwitch from "./components/ThemeSwitch.vue";
   import AppToast from "./components/AppToast.vue";
-  import { useClipboard } from "./composables/useClipboard.ts";
+  import SiteFooter from "./components/SiteFooter.vue";
   import { useTheme } from "./composables/useTheme.ts";
   import { formatRatio } from "./lib/contrast.ts";
   import {
@@ -167,7 +183,6 @@
   import { colors, printSet } from "./tokens/colors.ts";
 
   useTheme();
-  const { copy } = useClipboard();
   const heroVisible = ref(false);
 
   onMounted(() => {

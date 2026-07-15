@@ -1,0 +1,171 @@
+@use "variables" as *;
+
+.role-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-default);
+  border-radius: 0.4rem;
+  background: var(--surface-raised);
+}
+
+.role-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+
+  th,
+  td {
+    padding: 0.65rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-default);
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--surface-subtle);
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  code {
+    background: transparent;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+}
+
+.contrast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.contrast-panel {
+  padding: 1.25rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border-default);
+  background: var(--surface-raised);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  &[data-theme="light"] {
+    color-scheme: light;
+    --panel-bg: #fffafb;
+    --panel-fg: #2a2628;
+    --panel-muted: #766a6e;
+    background: var(--panel-bg);
+    color: var(--panel-fg);
+  }
+
+  &[data-theme="dark"] {
+    color-scheme: dark;
+    --panel-bg: #1a1416;
+    --panel-fg: #faf8f8;
+    --panel-muted: #b5a8ac;
+    background: var(--panel-bg);
+    color: var(--panel-fg);
+    border-color: #3f393c;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+
+    span {
+      color: var(--panel-muted);
+    }
+  }
+}
+
+.applied {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 0.5rem;
+
+  &__sample {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+
+    code {
+      font-size: 0.85em;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__link {
+    font-weight: 500;
+  }
+
+  &__body {
+    margin: 0;
+    max-width: 36rem;
+  }
+
+  &__caption {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  &__toki-banner {
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.35rem;
+    background: var(--color-primary-300);
+    color: var(--text-inverse);
+    font-family: $serif;
+    font-size: 1.25rem;
+
+    [data-theme="light"] & {
+      color: var(--color-neutral-900);
+    }
+  }
+}
+
+.print-set__chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  max-width: 32rem;
+}

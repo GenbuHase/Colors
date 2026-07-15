@@ -21,7 +21,7 @@ Vue 3 + Vite. Tokens live under `src/tokens/` and stay framework-agnostic.
 
 Theme via `data-theme="light|dark"`. Primitives stay fixed; only **roles** (`--surface-*`, `--text-*`, `--action-*`, …) switch.
 
-Print triad (light only): 鴇 `#F4B3C2` · ink `#2A2628` · celadon `#316C66`
+Print set (light only): 鴇 `#F4B3C2` · 墨 `#2A2628` · 青磁 `#316C66`
 
 ## Import
 

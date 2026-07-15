@@ -35,13 +35,5 @@ export function initTheme(): { mode: ThemeMode; resolved: ResolvedTheme } {
   const mode = getStoredTheme();
   const resolved = resolveTheme(mode);
   applyResolvedTheme(resolved);
-
-  const mq = window.matchMedia("(prefers-color-scheme: dark)");
-  mq.addEventListener("change", () => {
-    if (getStoredTheme() === "system") {
-      applyResolvedTheme(getSystemTheme());
-    }
-  });
-
   return { mode, resolved };
 }

@@ -1,0 +1,93 @@
+@use "variables" as *;
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(0.6rem);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+  transition-delay: var(--delay, 0ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  &__chip {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.35 / 1;
+    border-radius: 0.35rem;
+    border: 1px solid color-mix(in srgb, var(--border-default) 70%, transparent);
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  &__token {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  &__hex {
+    font-family: $mono;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  &__note {
+    font-size: 0.72rem;
+    color: var(--link);
+  }
+
+  &--inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 1;
+    transform: none;
+
+    .swatch__chip {
+      width: 2rem;
+      aspect-ratio: 1;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.swatch-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-family: $mono;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.2rem;
+    background: var(--c);
+    border: 1px solid color-mix(in srgb, var(--border-default) 80%, transparent);
+    flex-shrink: 0;
+  }
+}

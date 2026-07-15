@@ -1,0 +1,35 @@
+.semantic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0.85rem;
+}
+
+.semantic-card {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border-default);
+  border-left: 4px solid var(--sem-fg);
+  background: var(--sem-bg);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  &__en {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+}

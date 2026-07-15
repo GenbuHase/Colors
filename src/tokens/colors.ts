@@ -109,7 +109,7 @@ export const rolesDark = {
   infoBg: colors.semantic.info.bgDark,
 } as const;
 
-/** Print / business-card triad (always light) */
+/** Print set for business card / print (always light) */
 export const printSet = {
   toki: colors.primary[300],
   ink: colors.neutral[900],

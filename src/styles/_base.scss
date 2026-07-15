@@ -1,0 +1,88 @@
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $sans;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--surface-page);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+h1,
+h2,
+h3,
+.hero__brand,
+.topbar__brand {
+  font-family: $serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.6em;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.heading__token {
+  font-family: $mono;
+  font-size: 0.55em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--link);
+}
+
+code {
+  font-family: $mono;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background: var(--surface-subtle);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}

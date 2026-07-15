@@ -1,0 +1,51 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 0.35rem;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+
+  &--primary {
+    background: var(--action-primary);
+    color: var(--text-inverse);
+
+    &:hover {
+      background: var(--action-primary-hover);
+    }
+  }
+
+  &--accent {
+    background: var(--action-accent);
+    color: var(--text-inverse);
+  }
+
+  &--ghost {
+    background: color-mix(in srgb, var(--surface-raised) 55%, transparent);
+    color: var(--text-inverse);
+    border-color: color-mix(in srgb, var(--text-inverse) 35%, transparent);
+
+    [data-theme="dark"] & {
+      color: var(--text-primary);
+      border-color: var(--border-default);
+      background: color-mix(in srgb, var(--surface-raised) 70%, transparent);
+    }
+  }
+
+  &--small {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    background: var(--surface-subtle);
+    color: var(--text-primary);
+    border-color: var(--border-default);
+  }
+}

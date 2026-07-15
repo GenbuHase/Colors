@@ -1,0 +1,102 @@
+@use "variables" as *;
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+
+  &__plane {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        120% 80% at 70% 20%,
+        color-mix(in srgb, var(--color-primary-300) 75%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(
+        160deg,
+        var(--color-primary-200) 0%,
+        var(--color-primary-300) 42%,
+        var(--color-primary-400) 100%
+      );
+
+    [data-theme="dark"] & {
+      background:
+        radial-gradient(
+          90% 70% at 75% 15%,
+          color-mix(in srgb, var(--color-primary-300) 55%, transparent),
+          transparent 50%
+        ),
+        linear-gradient(
+          165deg,
+          var(--surface-subtle) 0%,
+          color-mix(in srgb, var(--surface-page) 40%, var(--color-primary-950)) 55%,
+          var(--surface-page) 100%
+        );
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: $content-max;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4.5rem $content-pad-x 3.5rem;
+  }
+
+  &__brand {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    margin: 0 0 0.4rem;
+    color: var(--text-inverse);
+    text-shadow: 0 1px 0 color-mix(in srgb, var(--color-primary-900) 18%, transparent);
+
+    [data-theme="dark"] & {
+      color: var(--color-primary-300);
+      text-shadow: none;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    max-width: 18em;
+    color: var(--text-inverse);
+    margin-bottom: 0.75rem;
+
+    [data-theme="dark"] & {
+      color: var(--text-primary);
+    }
+  }
+
+  &__lead {
+    max-width: 28em;
+    color: color-mix(in srgb, var(--text-inverse) 88%, transparent);
+    margin-bottom: 1.5rem;
+
+    [data-theme="dark"] & {
+      color: var(--text-secondary);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+.hero-enter {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
