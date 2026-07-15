@@ -1,6 +1,8 @@
-# MyColors
+# Colors (`@genbuhase/own-colors`)
 
-Personal color palette for Genbu Hase. Anchor: birth color **鴇色** `#f4b3c2` (Mar 3).
+長谷 玄武 (Genbu Hase) のカラーパレット。誕生色の**鴇色**（`#f4b3c2`）をベースとしています。
+
+Web / プロダクト向けのトークン（CSS・TypeScript）と、一枚のショーケース（Vue 3 + Vite）を同梱しています。
 
 ## Dev
 
@@ -9,36 +11,45 @@ npm install
 npm run dev
 ```
 
-Vue 3 + Vite. Tokens live under `src/tokens/` and stay framework-agnostic.
+トークンは `src/tokens/` にあり、フレームワーク非依存です。
+
 ## Tokens
 
 | Family | Name | Use |
 |--------|------|-----|
-| `primary` | 鴇 (toki) | Anchor, fills, primary button |
-| `accent` | 青磁 (celadon) | Links, accent button |
-| `neutral` | インク (ink) | Text, borders |
+| `primary` | 鴇 (toki) | Anchor / Fills / Primary button |
+| `accent` | 青磁 (celadon) | Links / Accent button |
+| `neutral` | 墨 (ink) | Text / Borders |
 | `semantic` | success / warning / danger / info | Status |
 
-Theme via `data-theme="light|dark"`. Primitives stay fixed; only **roles** (`--surface-*`, `--text-*`, `--action-*`, …) switch.
+`data-theme="light|dark"`でテーマを切り替えられます。
 
-Print set (light only): 鴇 `#F4B3C2` · 墨 `#2A2628` · 青磁 `#316C66`
+### Print set
+
+名刺・印刷向けの3色です（常にLightテーマ）。
+
+| Color | HEX | Token |
+|-------|-----|-------|
+| 鴇 | `#F4B3C2` | `primary-300` |
+| 墨 | `#2A2628` | `neutral-900` |
+| 青磁 | `#316C66` | `accent-600` |
 
 ## Import
 
 ```css
-@import "@genbuhase/my-colors/tokens.css";
+@import "@genbuhase/own-colors/tokens.css";
 ```
 
 ```ts
-import { colors, printSet } from "@genbuhase/my-colors/tokens";
+import { colors, printSet } from "@genbuhase/own-colors/tokens";
 ```
 
 | Path | Contents |
 |------|----------|
-| `tokens.css` | colors + roles |
-| `colors.css` / `roles.css` | split |
+| `tokens.css` | Colors + Theme |
+| `colors.css` / `theme.css` | Split |
 | `tokens` | TypeScript |
 
 ## License
 
-MIT © 長谷 玄武 (Genbu Hase)
+[MIT License](./LICENSE)

@@ -134,7 +134,7 @@
       <div class="section__inner">
         <h2>Print Set</h2>
         <p class="section__lead">
-          名刺・印刷向けの3色です。常にLight-Themeの鴇色 / 墨色 / 青磁色となります。
+          名刺・印刷向けの3色です。常にLightテーマの鴇色 / 墨色 / 青磁色となります。
         </p>
 
         <div class="print-set">

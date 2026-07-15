@@ -65,15 +65,15 @@ export const contrastPairs = {
   ],
 } as const;
 
-export const cssSnippet = `@import "@genbuhase/my-colors/tokens.css";
+export const cssSnippet = `@import "@genbuhase/own-colors/tokens.css";
 
-/* roles switch via html[data-theme="light" | "dark"] */
+/* theme roles switch via html[data-theme="light" | "dark"] */
 body {
   background: var(--surface-page);
   color: var(--text-primary);
 }`;
 
-export const tsSnippet = `import { colors, printSet } from "@genbuhase/my-colors/tokens";
+export const tsSnippet = `import { colors, printSet } from "@genbuhase/own-colors/tokens";
 
 colors.primary[300]; // 鴇色 (toki)
 printSet;            // print set (business card / print)
